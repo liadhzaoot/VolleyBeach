@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import LoginScreen from './src/screens/LoginScreen'
+import TestScreen from './src/screens/TestScreen'
+import HomeScreen from './src/screens/HomeScreen'
+import SighupScreen from './src/screens/SighupScreen'
+import CircleViewScreen from './src/screens/CircleViewScreen'
+import CircleScreen from './src/screens/CircleScreen'
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigation = createStackNavigator({
+  Login: {
+    screen: LoginScreen,
+    navigationOptions: {
+      headerShown: false
+    }
   },
+  Sighup: SighupScreen,
+  Test: TestScreen,
+  Home: HomeScreen,
+  CirclesView: CircleViewScreen,
+  Circle: CircleScreen,
+
+}, {
+  initialRouteName: 'Login',
+  defaultNavigationOptions: {
+    title: 'VolleyBeach'
+  }
 });
+
+export default createAppContainer(navigation);
