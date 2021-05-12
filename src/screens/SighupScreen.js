@@ -31,7 +31,7 @@ import { set } from 'react-native-reanimated';
 
 
 
-const BasicURL = "http://10.100.102.18:5000/"
+const BasicURL = "http://10.100.102.9:5000/"
 ///user/signup
 const sighupScreen4 = (props) => {
     const [result, setResult] = useState({})
@@ -113,7 +113,7 @@ const sighupScreen4 = (props) => {
                     />
                 </View>
                 <View style={styles.bottomView}>
-                    <Text style={styles.sighText}>Sighup</Text>
+                    <Text style={styles.sighText}>SignUp</Text>
                     {
                         resultError ?
                             <Text style={{ color: "red" }}>{result["error"]}</Text>
@@ -130,7 +130,7 @@ const sighupScreen4 = (props) => {
                         <TextInput
                             style={styles.input}
                             placeholder='First Name'
-                            autoCapitalize='none'
+                            autoCapitalize='sentences'
                             keyboardType='email-address'
                             textContentType='emailAddress'
                             onChangeText={(firstName) => setFirstName(firstName)}
@@ -147,7 +147,7 @@ const sighupScreen4 = (props) => {
                         <TextInput
                             style={styles.input}
                             placeholder='Last Name'
-                            autoCapitalize='none'
+                            autoCapitalize='sentences'
                             keyboardType='email-address'
                             textContentType='emailAddress'
                             onChangeText={(lastName) => setLastName(lastName)}
@@ -211,7 +211,7 @@ const sighupScreen4 = (props) => {
                         }
 
                     >
-                        <Text style={styles.sighupButtonText}>Sighup</Text>
+                        <Text style={styles.sighupButtonText}>SignUp</Text>
                     </TouchableOpacity>
                 </View>
             </View>

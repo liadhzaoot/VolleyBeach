@@ -9,6 +9,7 @@ import {
     TouchableWithoutFeedback,
     Dimensions,
     Keyboard,
+    ActivityIndicator
 } from 'react-native';
 
 // You can use your custom background image
@@ -30,7 +31,7 @@ import * as Animatable from 'react-native-animatable';
 
 
 
-const BasicURL = "http://10.100.102.18:5000/"
+const BasicURL = "http://10.100.102.9:5000/"
 
 export default function LoginScreen4(props) {
 
@@ -38,12 +39,15 @@ export default function LoginScreen4(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailErrorShow, setEmailErrorShow] = useState(false)
+    const [counterFirst, setCounterFirst] = useState(0)
     useEffect(() => {
         if (result["error"])
             setEmailErrorShow(true)
         else {
             setEmailErrorShow(false)
-            props.navigation.navigate('Home', { "id": result })
+            if (counterFirst != 0)
+                props.navigation.navigate('Home', { "id": result })
+            setCounterFirst(counterFirst + 1)
         }
 
     }, [result])
@@ -55,7 +59,9 @@ export default function LoginScreen4(props) {
     });
 
     if (!loaded || !BackgroundImage) {
-        return <Text>Loading...</Text>;
+        return (<View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <ActivityIndicator size="large" color="#000"></ActivityIndicator>
+        </View>)
     }
 
     // const loginPost = () => {
@@ -147,10 +153,12 @@ export default function LoginScreen4(props) {
                             placeholder='Password'
                             secureTextEntry={true}
                             autoCapitalize='none'
-                            onChangeText={(password) => setPassword(password)}
-                        />
+                            onChangeText={(password) => setPassword(password)}>
+                        </TextInput>
                     </View>
-                    <Text style={styles.fpText}>Forgot Password?</Text>
+                    <TouchableOpacity onPress={() => alert("Tip: Improve your memory :)")}>
+                        <Text style={styles.fpText}>Forgot Password?</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.loginButton}
                         onPress={() => {
@@ -163,7 +171,7 @@ export default function LoginScreen4(props) {
                     </TouchableOpacity>
                     <Text style={styles.registerText}>
                         Don't have an account?
-                    <TouchableOpacity onPress={() => { props.navigation.navigate('Sighup') }}>
+                    <TouchableOpacity onPress={() => { props.navigation.navigate('Sighup', { "id": "liad" }) }}>
                             <Text style={{ color: '#5352ed', fontFamily: 'SourceSansProBold' }}>
                                 {' Register'}
 
