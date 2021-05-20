@@ -6,12 +6,11 @@ import SourceSansProLight from '../../assets/fonts/SourceSansPro/SourceSansPro-L
 import SourceSansProRegular from '../../assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf';
 import SourceSansProBold from '../../assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf';
 import blue_ball1 from '../../assets/balls/blue_ball1.gif';
-import { LogBox } from 'react-native';
 import { useFonts } from 'expo-font';
-
+import { LogBox } from 'react-native';
 //const liad = () => { setResult("liad") }
 
-const BasicURL = "http://10.100.102.9:5000/"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
 const COLORARR = ["rgb(94, 135, 252)", "rgb(94, 135, 252)", "rgb(241, 79, 39)", "rgb(125, 234, 39)"]
 const RandomTeamsScreen = ({ navigation }) => {
     const gameInfo = navigation.getParam("id");
@@ -30,8 +29,9 @@ const RandomTeamsScreen = ({ navigation }) => {
         }
     }, [teams])
     useEffect(() => {
-        if (Platform.OS != 'web')
+        if (Platform.OS != 'web') {
             LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+        }
         getCurGame()
     }, [])
     const getCurGame = () => {

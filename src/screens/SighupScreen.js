@@ -31,7 +31,8 @@ import { set } from 'react-native-reanimated';
 
 
 
-const BasicURL = "http://10.100.102.9:5000/"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
+
 ///user/signup
 const sighupScreen4 = (props) => {
     const [result, setResult] = useState({})
@@ -67,20 +68,6 @@ const sighupScreen4 = (props) => {
                 alert(error);
             });
     }
-
-    // const postUserFromApi = async () => {
-    //     let dror = await fetch(BasicURL + "user/signup",
-    //         {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: createUserJson()
-    //         }).then((response) => response.json());
-    //     console.log("adsadadssadsadsadsadsadsadsadadsa")
-    //     setResult(dror)
-    // }
 
 
 

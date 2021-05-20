@@ -15,7 +15,8 @@ import Card from '../components/card'
 import home_page from '../../assets/uiscreens/home_page.png';
 import { LogBox } from 'react-native';
 //userName: string
-const BasicURL = "http://10.100.102.9:5000"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
+
 const HomeScreen = ({ route, navigation }) => {
     //const userInfo = route.params.params;
     const userInfo = navigation.getParam("id");

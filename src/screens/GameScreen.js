@@ -3,7 +3,8 @@ import { Platform, SafeAreaView, ScrollView, View, Image, Text, StyleSheet, Touc
 import grey_ball from '../../assets/balls/grey_ball.gif';
 import { LogBox } from 'react-native';
 //const liad = () => { setResult("liad") }
-const BasicURL = "http://10.100.102.9:5000/"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
+
 
 const GameScreen = ({ navigation }) => {
     useEffect(() => {

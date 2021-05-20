@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import grey_ball from '../../assets/balls/grey_ball.gif';
 export default function Player(props) {
-    console.log("liad###############################")
-    console.log(props.player)
+
     return (
         <View style={styles.listView}>
             <Text style={styles.playerListText}>

@@ -8,7 +8,8 @@ import SourceSansProLight from '../../assets/fonts/SourceSansPro/SourceSansPro-L
 import SourceSansProRegular from '../../assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf';
 import SourceSansProBold from '../../assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf';
 
-const BasicURL = "http://10.100.102.9:5000"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
+
 const GameViewScreen = ({ navigation }) => {
     const [game, setGame] = useState([])
     const [loading, setLoading] = useState(true)

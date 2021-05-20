@@ -30,8 +30,7 @@ import { Icon } from 'react-native-elements';
 import * as Animatable from 'react-native-animatable';
 
 
-
-const BasicURL = "http://10.100.102.9:5000/"
+const BasicURL = "https://murmuring-coast-31964.herokuapp.com/"
 
 export default function LoginScreen4(props) {
 
