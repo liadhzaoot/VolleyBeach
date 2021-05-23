@@ -1,3 +1,3 @@
 # VolleyBeach
-VolleyBeach Server Side using React Native
+VolleyBeach Client Side using React Native
 
